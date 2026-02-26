@@ -133,4 +133,19 @@ function renderProducts() {
 window.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   renderCart();
+  initHeroSlider();
 });
+
+// Hero slider logic
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  let index = 0;
+  if (slides.length > 0) {
+    slides[0].classList.add('active');
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000);
+  }
+}
