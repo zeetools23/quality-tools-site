@@ -2,73 +2,59 @@
 const products = [
   {
     id: 1,
-    name: 'Under-Cabinet Lights',
-    description: 'Snap-on LED lights that brighten kitchens, closets and desks. Easy to install and rechargeable.',
+    name: 'Under‑Cabinet Lights',
+    description: 'Snap‑on LED lights that brighten kitchens, closets and desks. Easy to install and rechargeable.',
     price: 25,
-    image: 'https://source.unsplash.com/featured/?under-cabinet-light'
+    image: 'https://images.pexels.com/photos/11262210/pexels-photo-11262210.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'lights'
   },
   {
     id: 2,
     name: 'Portable Tire Inflator',
     description: 'Cordless inflator keeps your tires at the right pressure anywhere. Fits in your glove box.',
     price: 45,
-    image: 'https://source.unsplash.com/featured/?tire-inflator'
+    image: 'https://images.pexels.com/photos/12996982/pexels-photo-12996982.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'inflators'
   },
   {
     id: 3,
     name: 'Compact Tool Set',
-    description: '40-piece kit with screwdrivers, sockets and pliers in a sturdy case.',
+    description: '40‑piece kit with screwdrivers, sockets and pliers in a sturdy case.',
     price: 55,
-    image: 'https://source.unsplash.com/featured/?tool-set'
+    image: 'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'toolsets'
   },
   {
     id: 4,
     name: 'Stud Finder',
     description: 'Handheld scanner locates studs, pipes and wires so you can drill with confidence.',
     price: 30,
-    image: 'https://source.unsplash.com/featured/?stud-finder'
+    image: 'https://images.pexels.com/photos/4792486/pexels-photo-4792486.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'studfinders'
   },
   {
     id: 5,
     name: 'Compact Level',
     description: 'Torpedo level helps you keep shelves and frames perfectly straight.',
     price: 20,
-    image: 'https://source.unsplash.com/featured/?spirit-level'
+    image: 'https://images.pexels.com/photos/5853931/pexels-photo-5853931.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'levels'
   },
   {
     id: 6,
     name: 'Utility Knife',
-    description: 'Quick-change blade design for safe, precise cutting of boxes and materials.',
+    description: 'Quick‑change blade design for safe, precise cutting of boxes and materials.',
     price: 15,
-    image: 'https://source.unsplash.com/featured/?utility-knife'
+    image: 'https://images.pexels.com/photos/25839237/pexels-photo-25839237.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'knives'
   },
   {
     id: 7,
     name: 'Cordless Heat Gun',
     description: 'Portable heat gun for paint stripping, shrink tubing and plastic bending with adjustable heat.',
     price: 50,
-    image: 'https://source.unsplash.com/featured/?heat-gun'
-  },
-  {
-    id: 8,
-    name: 'Leaf Blower',
-    description: 'Keep patios and driveways clear of leaves and dust. Lightweight cordless design.',
-    price: 80,
-    image: 'https://source.unsplash.com/featured/?leaf-blower'
-  },
-  {
-    id: 9,
-    name: 'Pressure Washer',
-    description: 'Clean gutters, fences and driveways with this compact pressure washer.',
-    price: 90,
-    image: 'https://source.unsplash.com/featured/?pressure-washer'
-  },
-  {
-    id: 10,
-    name: 'String Trimmer',
-    description: 'Cordless trimmer for tight corners and irregular lawns.',
-    price: 70,
-    image: 'https://source.unsplash.com/featured/?string-trimmer'
+    image: 'https://images.pexels.com/photos/6025904/pexels-photo-6025904.jpeg?auto=compress&cs=tinysrgb&w=600',
+    category: 'heatguns'
   }
 ];
 
@@ -128,6 +114,8 @@ function renderProducts() {
   products.forEach(product => {
     const card = document.createElement('div');
     card.className = 'card';
+    // assign id using product category to allow anchor navigation
+    card.id = product.category;
     card.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <div class="card-content">
